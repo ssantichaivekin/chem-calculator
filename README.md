@@ -9,3 +9,5 @@ I am also looking towards to take advantage of Mac's `automation` and Python's `
 I am also thinking about using Python's magic method for something pretty cool. Let's see how it goes. (Say `~'C6H12O6'` outputs `180.16`.)
 
 I will also add web scraping to the ipython code to scrape chemistry properties from wikipedia. I feel like the program also deserve its own version of `whos`.
+
+Units will be of importance when this thing continue to develops.
