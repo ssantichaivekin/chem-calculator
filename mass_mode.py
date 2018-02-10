@@ -36,5 +36,5 @@ def mass_mode() :
     globals().update(element_dict)
 
 # With this new mass mode call line!
-mass_mode()
+# mass_mode()
 
