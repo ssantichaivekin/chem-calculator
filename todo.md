@@ -1,6 +1,6 @@
 This is my to do list.
 
-1. Define a function mass mode that change each element's value to its mass. +
+1. Define a function mass mode that change each element's value to its mass. #
 2. Define a function mass('name') which calculate the mass of such name. > mass('C6H12O6') +
 3. Make that function support parenthesis--use recursion? +
 4. Create test cases for both functions. (maybe do this first.) +
