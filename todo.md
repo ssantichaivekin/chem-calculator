@@ -9,4 +9,4 @@ This is my to do list.
 7. Enable the mass command to scrape the web for mass information.
 8. Create lab objects like breaker. They can have properties like 'molar' and methods like pour_to().
 
-Legend : + means pland to finish today. # means finished.
+Legend : + means planing to finish today. # means finished.
