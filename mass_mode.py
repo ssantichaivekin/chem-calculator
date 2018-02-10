@@ -21,15 +21,20 @@ def read_mass_from_file( filepath='' ) :
     for row in reader :
         element_name = row[0]
         element_mass = row[1]
-        element_dict[element_name] = element_mass
+        element_dict[element_name] = float(element_mass)
     return element_dict
     
 def web_scrape_mass() :
     return
 
-'''
-The mass mode is now here.
-Add element names and masses to the global variables.
-'''
-element_dict = read_mass_from_file()
-globals().update(element_dict)
+def mass_mode() :
+    '''
+    The mass mode is now back here.
+    Add element names and masses to the global variables.
+    '''
+    element_dict = read_mass_from_file()
+    globals().update(element_dict)
+
+# With this new mass mode call line!
+mass_mode()
+
