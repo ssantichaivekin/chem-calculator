@@ -23,22 +23,13 @@ def read_mass_from_file( filepath='' ) :
         element_mass = row[1]
         element_dict[element_name] = element_mass
     return element_dict
-
-def mass_mode() :
-    '''
-    Add element names and masses to the global variables.
-    '''
-    element_dict = read_mass_from_file()
-    globals().update(element_dict)
-    # TODO: This does not really update the global
-    # variables in the terminal
-    print(C)
     
-
-
-
-
-
-
 def web_scrape_mass() :
     return
+
+'''
+The mass mode is now here.
+Add element names and masses to the global variables.
+'''
+element_dict = read_mass_from_file()
+globals().update(element_dict)
