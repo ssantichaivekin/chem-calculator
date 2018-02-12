@@ -17,7 +17,7 @@ def read_mass_from_file( filepath = '' ) :
     # TODO: how to I set up the file path correctly so that
     # I can call this function from anywhere?
     # Do I config this file path in pip?
-    filepath = filepath or 'element_mass.csv'
+    filepath = filepath or './data/element_mass.csv'
     element_dict = {}
     f = open(filepath)
     reader = csv.reader(f)
