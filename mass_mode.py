@@ -3,10 +3,13 @@ The mass mode function sets the element variables to be its mass.
 For example, H = 1, He = 4, Li = 3.
 We now have an inaccurate mass mode. We will implement a wikipedia
 web-scrape mass mode later.
+
+You will have to call this with a %run -i and call mass_mode()
+in order for it to initialize all the global variables.
 '''
 import csv
 
-def read_mass_from_file( filepath='' ) :
+def read_mass_from_file( filepath = '' ) :
     '''
     Read mass information from file path or 'element_mass.csv'
     and return the name and the mass info as a dictionary.
