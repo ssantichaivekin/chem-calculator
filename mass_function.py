@@ -29,7 +29,7 @@ def fmass(formula) :
     return first_element_group
 
 
-def m(name) :
+def mass(name) :
     '''
     Return the mass of the chemical formula or chemical name.
     '''
@@ -39,3 +39,8 @@ def m(name) :
         return fmass(name)
     
 
+def m(name) :
+    '''
+    m is the shorthand for mass.
+    '''
+    return mass(name)
