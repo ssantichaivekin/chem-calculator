@@ -12,13 +12,21 @@ def is_formula(string) :
     '''
     Check whether a string is a chemical formula.
     '''
-    chemical_formula_regex_check = r'^(?:(?:[A-Z][a-z]?[0-9]*)|\(.*\))*$'
-    r = re.compile(chemical_formula_regex_check)
-    result = r.match(string)
+    chemical_formula_pattern = r'^(?:(?:[A-Z][a-z]?[0-9]*)|\(.*\))*$'
+    chemical_formula_regex = re.compile(chemical_formula_pattern)
+    result = chemical_formula_regex.match(string)
     return bool(result)
 
 def fmass(formula) :
-    return
+    '''
+    Compute the mass of the chemical formula.
+    Note that we should carefully escape the oxidation numbers of
+    metals such as Cu(II)SO4.
+    '''
+    first_element_pattern = r'(?:([A-Z][a-z]?)([0-9])?|\(.*\))'
+    first_element_regex = re.compile(first_element_pattern)
+    first_element_group = first_element_regex.match(formula)
+    return first_element_group
 
 
 def m(name) :

@@ -36,5 +36,6 @@ def mass_mode() :
     globals().update(element_dict)
 
 # With this new mass mode call line!
-mass_mode()
+if __name__ == 'main' :
+    mass_mode()
 
