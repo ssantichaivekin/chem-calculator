@@ -2,6 +2,7 @@ This is my to do list.
 
 - Create MORE test cases for both functions.
 - Create a list of constants that should be defined like plank constant, the ideal gas constant, or moles.
+- The function `m()` should support `Na2B4O7.10 H2O` maybe also `Na2B4O7+10H2O`.
 - Create `showwork()` method.
 - Integrate it to the terminal for it to run well. / Automation / ipythonrc
 - Enable the mass command to scrape the web for mass information.
