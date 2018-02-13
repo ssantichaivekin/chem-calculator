@@ -9,6 +9,8 @@ This is my to do list.
 - Create lab objects like breaker. They can have properties like 'molar' and methods like pour_to().
 - How about a 'react()' method?
 - Rewrite README.md
+- Maybe elements, compounds, etc deserves its own class.
+- 
 
 Done
 
