@@ -1,5 +1,6 @@
 This is my to do list.
 
+- Create a new matcher class.
 - Create a list of constants that should be defined like plank constant, the ideal gas constant, or moles. (We look this up in our chem modules / textbook appendix).
 - The function `m()` should support `Na2B4O7.10 H2O` maybe also `Na2B4O7+10H2O`.
 - Create `showwork()` method.
