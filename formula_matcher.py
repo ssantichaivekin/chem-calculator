@@ -76,7 +76,6 @@ def isChemicalFormula(string) :
 def formulaParse(string) :
     '''
     Returns the following: {
-    'isgroup' : (bool) 1 if to be called recursively.
     'group' : (str) the chemical group to be called recursively
     'group count' : (int) 1 by default
     'element name' : (str) if it is just an element
@@ -104,8 +103,19 @@ def formulaParse(string) :
                     info_val = info_type(res.group(i+1))
 
                 result[info_name] = info_val
-            result['left group'] = string[res.end():]
+            left = string[res.end():]
+            if left :
+                result['left group'] = left
             return result
+    return {}
 
+if __name__ == '__main__' :
+    assert isChemicalFormula('Santi') == False
+    assert isChemicalFormula('haha') == False
+    assert isChemicalFormula('True') == False
+    assert isChemicalFormula('KAl(SO4)2·12H2O')
+    print('C6H12O6', formulaParse('C6H12O6'))
+    print('Cu(II)SO4', formulaParse('Cu(II)SO4'))
+    print('12H2O', formulaParse('12H2O'))
 
 
