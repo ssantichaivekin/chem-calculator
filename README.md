@@ -1,4 +1,4 @@
-#chem-calculator
+# chem-calculator
 
 Python helper functions for simple chemistry calculations.
 
