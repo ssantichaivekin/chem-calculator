@@ -30,7 +30,7 @@ out_group_types = [int, str]
 out_group_regex = re.compile(out_group_pattern)
 
 # (dot/plus) group count, inside group
-quantifier_pattern = r'(?:\.|\+| |.{0})([0-9]+)([^\.\+]*)'
+quantifier_pattern = r'(?:\.|\+| |·|.{0})([0-9]+)([^\.\+]*)'
 quantifier_des = ['group count', 'group']
 quantifier_types = [int, str]
 quantifier_regex = re.compile(quantifier_pattern)
@@ -114,6 +114,10 @@ if __name__ == '__main__' :
     assert isChemicalFormula('haha') == False
     assert isChemicalFormula('True') == False
     assert isChemicalFormula('KAl(SO4)2·12H2O')
+    assert formulaParse('C6H12O6')['element name'] == 'C'
+    assert formulaParse('NaCl')['element name'] == 'Na'
+    assert formulaParse('CH3COOH')['element name'] == 'C'
+    assert formulaParse('MgSo4')['element name'] == 'Mg'
     print('C6H12O6', formulaParse('C6H12O6'))
     print('Cu(II)SO4', formulaParse('Cu(II)SO4'))
     print('12H2O', formulaParse('12H2O'))

@@ -41,4 +41,6 @@ def mass_mode() :
 # With this new mass mode call line!
 if __name__ == '__main__' :
     mass_mode()
+    assert H < He < Li < C < O < Cl
+    assert 12 <= C < 12.5 # 12.0107
 

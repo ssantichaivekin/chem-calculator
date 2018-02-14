@@ -8,11 +8,11 @@ relations starts to matter.)
 
 from mass_mode import *
 from formula_matcher import isChemicalFormula, formulaParse
-from wiki_scraper import wikiscrape
+from scraper.wiki_scraper import wikiscrape
 
 masses = read_mass_from_file()
 
-def fmass(formula) :
+def count_elements(formula) :
     '''
     Compute the total mass of the chemical formula.
     Note that we should carefully escape the oxidation numbers of
@@ -27,20 +27,41 @@ def fmass(formula) :
         # 'element count' : (int) the count of the element
         # 'left group' : (str) another group to be called recursively
         parsedict = formulaParse(formula)
+        # print(formula, parsedict)
         
         if 'element name' in parsedict :
             # it is an element
             element_name = parsedict['element name']
-            element_mass = masses[element_name]
             element_count = parsedict['element count']
             if element_name not in elements :
                 elements[element_name] = 0
             elements[element_name] += element_count
-            formula = parsedict['left group']
 
-        if ''
+        if 'group' in parsedict :
+            # is a group
+            newgroup = parsedict['group']
+            group_count = parsedict['group count']
+            new_elements = count_elements(newgroup)
+            for element in new_elements :
+                if element not in elements :
+                    elements[element] = 0
+                elements[element] += group_count * new_elements[element]
+        
+        if 'left group' in parsedict :
+            formula = parsedict['left group']
+        else :
+            formula = ''
 
     return elements
+
+def fmass(formula) :
+    elements = count_elements(formula)
+    total_mass = 0
+    for element in elements :
+        count = elements[element]
+        total_mass += masses[element] * count
+    return total_mass
+
 
 def wiki_mass(name) :
     '''
@@ -55,7 +76,7 @@ def mass(name) :
     '''
     # We differentiate chemical formula and chemical name
     # by using regex.
-    if is_formula(name) :
+    if isChemicalFormula(name) :
         return fmass(name)
     else :
         return wiki_mass(name)
@@ -66,3 +87,11 @@ def m(name) :
     m is the shorthand for mass.
     '''
     return mass(name)
+
+if __name__ = '__main__' :
+    assert 179 <= mass('C6H12O6') <= 182 # 180.156
+    assert 179 <= m('C6H12O6') <= 182 # 180.156
+    assert 155 <= m('Cu(II)SO4') <= 165 # 159.609
+    assert 188 <= m('KHC4H4O6') <= 189 # 188.177
+    assert 59 <= m('(CH3)2CHOH') <= 61 # ‎60.096
+    assert 470 <= m('KAl(SO4)2·12H2O') <= 480 # 474.3884
