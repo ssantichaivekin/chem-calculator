@@ -6,7 +6,7 @@ components. (This is sometimes useful where very small mass-energy
 relations starts to matter.)
 '''
 
-from mass_mode import *
+from mass_mode import read_mass_from_file
 from formula_matcher import isChemicalFormula, formulaParse
 from scraper.wiki_scraper import wikiscrape
 
