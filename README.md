@@ -1,13 +1,13 @@
-# chem-calculator
+#chem-calculator
 
-Python helper functions designed to be used with interactive python. It takes advantage of Python's `global()` to set element and constant to the global scope (for example, we would set variable `H` to the value `1.008`. We can then use such constants for easy calculations.
+Python helper functions for simple chemistry calculations.
 
-The app should support something like `mass('C6H12O6')`. The function `info()` should look up last things search in `In` global variable and tell the user about the information. One cool thing is that wikipedia redirects `CuSO4` to its name `Copper(II) Sulfate`.
-
-I am also looking towards to take advantage of Mac's `automation` and Python's `ipythonrc`. To help initialize the script.
-
-I am also thinking about using Python's magic method for something pretty cool. Let's see how it goes. (Say `~'C6H12O6'` outputs `180.16`.)
-
-I will also add web scraping to the ipython code to scrape chemistry properties from wikipedia. I feel like the program also deserve its own version of `whos`.
-
-Units will be of importance when this thing continue to develops.
+You can do something like :
+```python
+count_elements('Na2B4O7.10H2O')
+=> {'B': 4, 'H': 20, 'Na': 2, 'O': 17}
+m('KAl(SO4)2·12H2O')
+=> 474.2
+isChemicalFormula('John Cena')
+=> False
+```
