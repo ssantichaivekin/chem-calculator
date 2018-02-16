@@ -2,6 +2,7 @@ This is my to do list.
 
 
 - Enable the mass command to scrape the web for mass information.
+- Should I merge the two functions into one (run val constants and run mass constants)
 - Integrate it to the terminal for it to run well. / Automation / zshrc / ipythonrc / ipython -i script.py (we do this by moving all scraping constants to ~/chem_calculator/constants_csv/)
 - Write a constant scraper.
 - We can also grab thermodynamic datas from wikipedia.

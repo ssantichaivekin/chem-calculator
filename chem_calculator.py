@@ -7,4 +7,4 @@ from constants.run_val_constants import *
 # import function to read mass
 from mass_function import m, mass, fmass, wikimass
 
-# import function
+# import function to read and process thermodynamic values

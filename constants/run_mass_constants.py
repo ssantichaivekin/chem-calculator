@@ -3,7 +3,7 @@ The mass constant function sets the element variables to be its mass.
 For example, H = 1, He = 4, Li = 3.
 '''
 
-from file_readers import read_mass_from_file
+from constants.file_readers import read_mass_from_file
 
 
 def run_mass_constants() :
