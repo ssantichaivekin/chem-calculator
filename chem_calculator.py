@@ -1,2 +1,2 @@
-from mass_mode import * # import define constants
+from constants.run_mass_constants import * # import defined mass constants
 from mass_function import m, mass, fmass, wikimass
