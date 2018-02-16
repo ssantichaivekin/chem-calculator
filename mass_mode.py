@@ -8,7 +8,7 @@ You will have to call this with a %run -i and call mass_mode()
 in order for it to initialize all the global variables.
 '''
 
-from scraper.file_readers import read_mass_from_file
+from constants.file_readers import read_mass_from_file
 
 
 def mass_mode() :

@@ -18,7 +18,7 @@ def read_dict_from_file(filepath) :
         res[key] = float(val)
     return res
 
-def read_mass_from_file(filepath='./scraper/element_masses.csv') :
+def read_mass_from_file(filepath='./constants/element_masses.csv') :
     '''
     Read mass information from file path or 'element_mass.csv'
     and return the name and the mass info as a dictionary.

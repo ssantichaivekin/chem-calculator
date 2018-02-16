@@ -8,7 +8,7 @@ relations starts to matter.)
 
 from mass_mode import read_mass_from_file
 from formula_matcher import isChemicalFormula, formulaParse
-from scraper.wiki_scraper import wikiscrape
+from constants.wiki_scraper import wikiscrape
 
 masses = read_mass_from_file()
 
