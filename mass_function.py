@@ -63,7 +63,7 @@ def fmass(formula) :
     return total_mass
 
 
-def wiki_mass(name) :
+def wikimass(name) :
     '''
     Scrape Wikipedia!
     '''
@@ -88,7 +88,7 @@ def m(name) :
     '''
     return mass(name)
 
-if __name__ = '__main__' :
+if __name__ == '__main__' :
     assert 179 <= mass('C6H12O6') <= 182 # 180.156
     assert 179 <= m('C6H12O6') <= 182 # 180.156
     assert 155 <= m('Cu(II)SO4') <= 165 # 159.609

@@ -19,9 +19,11 @@ def mass_mode() :
     element_dict = read_mass_from_file()
     globals().update(element_dict)
 
-# With this new mass mode call line!
+
+# The mass mode now calls mass_mode directly.
+mass_mode()
+
 if __name__ == '__main__' :
-    mass_mode()
     assert H < He < Li < C < O < Cl
     assert 12 <= C < 12.5 # 12.0107
 
