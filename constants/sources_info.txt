@@ -1,1 +1,3 @@
-The first set of data is from https://www.lenntech.com/periodic/mass/atomic-mass.htm
+Most of the current data is typed in by hand and is obtain from various sources on the internet. We will update these to scrape things from wikipedia.
+
+The element type "mass of something" should also be searched in wikipedia for the query mass.
