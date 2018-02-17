@@ -1,7 +1,6 @@
 This is my to do list.
 I think my productivity is very low. I should just do one thing at a time I guess.
 
-- Enable the mass command to scrape the web for mass information.
 - We can also grab thermodynamic datas from wikipedia. At this point, I should merge the two constant functions file into one (run val constants and run mass constants) and work upon the merged file.
 
 
@@ -21,3 +20,4 @@ Done
 - The function `m()` should support `Na2B4O7.10 H2O` maybe also `Na2B4O7+10H2O`.
 - Create a list of constants that should be defined like plank constant, the ideal gas constant, or moles.
 - Integrate it to the terminal for it to run well. (I did it by adding alias ichem='ipython -i ~/location/chem-calculator/chem_calculator.py in my .zshrc)
+- Enable the mass command to scrape the web for mass information.

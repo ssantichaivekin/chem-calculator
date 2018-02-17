@@ -5,6 +5,7 @@ This file defines a wikipedia .
 import requests
 import re
 from bs4 import BeautifulSoup
+from constants.file_writer import write_dict
 
 def wikisearch(query) :
     params = {'search': query}
@@ -18,7 +19,7 @@ def soupsite(query) :
 def parse_mass_info(info) :
     # if it has a !, read the number behind the !
     # either inside or outside of the box.
-    pattern = r'([0-9]+.[0-9]+)'
+    pattern = r'([0-9]+\.[0-9]+)'
     decimal_regex = re.compile(pattern)
     matchobj = decimal_regex.search(info)
     if matchobj :
@@ -69,6 +70,11 @@ def scrape_all_elements() :
             elements += [element]
         # print()
     return elements
+
+def write_mass_constants() :
+    elements = scrape_all_elements()
+    order = ['symbol', 'mass', 'name', 'elem_no']
+    write_dict('./constants/element_masses.csv', elements, order)
 
 
 def wikiscrape(const_name) :

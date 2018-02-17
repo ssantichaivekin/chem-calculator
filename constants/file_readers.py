@@ -1,4 +1,5 @@
 import csv
+from constants.wiki_scraper import write_mass_constants
 
 def read_dict_from_file(filepath) :
     '''
@@ -23,7 +24,12 @@ def read_mass_from_file(filepath='./constants/element_masses.csv') :
     Read mass information from file path or 'element_mass.csv'
     and return the name and the mass info as a dictionary.
     '''
-    element_masses = read_dict_from_file(filepath)
+    try :
+        element_masses = read_dict_from_file(filepath)
+    except FileNotFoundError :
+        write_mass_constants()
+        element_masses = read_dict_from_file(filepath)
+
     return element_masses
 
 def read_constants_from_file(filepath='./constants/constant_values.csv') :
