@@ -3,8 +3,8 @@ This file defines a wikipedia .
 '''
 
 import requests
+import re
 from bs4 import BeautifulSoup
-from re import compile, search
 
 def wikisearch(query) :
     params = {'search': query}
@@ -15,12 +15,21 @@ def soupsite(query) :
     r = requests.get(query)
     return BeautifulSoup(r.text, 'lxml')
 
-def parse_mass_info() :
+def parse_mass_info(info) :
     # if it has a !, read the number behind the !
     # either inside or outside of the box.
-    pattern = r'[0-9]+.[0-9]+'
-    decimal = re.compile(pattern)
+    pattern = r'([0-9]+.[0-9]+)'
+    decimal_regex = re.compile(pattern)
+    matchobj = decimal_regex.search(info)
+    if matchobj :
+        return float(matchobj.group(1))
     
+    pattern = r'([0-9]+)'
+    int_regex = re.compile(pattern)
+    matchobj = int_regex.search(info)
+    if matchobj :
+        return float(matchobj.group(1))
+
 
 def scrape_all_elements() :
     '''
@@ -31,7 +40,7 @@ def scrape_all_elements() :
     link = 'https://en.wikipedia.org/wiki/List_of_chemical_elements'
     soup = soupsite(link)
 
-    elements = {}
+    elements = []
 
     tables = soup.find_all('table')
     has_hydrogen = lambda x: 'Hydrogen' in x.prettify()
@@ -49,12 +58,17 @@ def scrape_all_elements() :
             symbol = info_array[1]
             name = info_array[2]
             mass_info = info_array[6]
+            mass = parse_mass_info(mass_info)
 
-            print('elem_no = ', elem_no)
-            print('symbol = ', symbol)
-            print('name = ', name)
-            print('mass_info = ', mass_info)
-        print()
+            # print('elem_no = ', elem_no)
+            # print('symbol = ', symbol)
+            # print('name = ', name)
+            # print('mass = ', mass)
+
+            element = {'elem_no': elem_no, 'symbol': symbol, 'name':name, 'mass': mass}
+            elements += [element]
+        # print()
+    return elements
 
 
 def wikiscrape(const_name) :
