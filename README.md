@@ -1,13 +1,13 @@
 # chem-calculator
 
-Python helper functions for simple chemistry calculations.
+Python helper functions for simple chemistry calculations. We have a bit of wikipedia webscraping, a bit of chemical-formula-parsing regex, and a bit of hand-copied chemical constants to help you through your chemistry classes. I hope this can alleviate the pain you have in your chemistry class. At least a bit.
 
 You can do something like :
 ```python
 => %run chem_calculator
-=> m('C6H12O6')
+=> mass('C6H12O6')
 180.0
-=> m('KAl(SO4)2·12H2O')
+=> mass('KAl(SO4)2·12H2O')
 474.2
 => h # plank constant
 6.626e-34
