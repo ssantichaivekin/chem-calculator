@@ -16,20 +16,37 @@ def soupsite(query) :
     r = requests.get(query)
     return BeautifulSoup(r.text, 'lxml')
 
-def parse_mass_info(info) :
-    # if it has a !, read the number behind the !
-    # either inside or outside of the box.
-    pattern = r'([0-9]+\.[0-9]+)'
+def parse_float(info) :
+    '''
+    Becareful! The minus (-) sign in wikipedia is not the same as in keyboard!
+    I don't know why this is the case. I will ask people later.
+    '''
+    pattern = r'(−?[0-9]+\.[0-9]+)'
     decimal_regex = re.compile(pattern)
     matchobj = decimal_regex.search(info)
     if matchobj :
-        return float(matchobj.group(1))
-    
-    pattern = r'([0-9]+)'
+        num = matchobj.group(1).replace('−', '-')
+        res = float(num)
+        return res
+
+def parse_int(info) :
+    pattern = r'(−?[0-9]+)'
     int_regex = re.compile(pattern)
     matchobj = int_regex.search(info)
     if matchobj :
-        return float(matchobj.group(1))
+        num = matchobj.group(1).replace('−', '-')
+        res = float(num)
+        return res
+
+
+def parse_float_or_int(info) :
+    # if it has a !, read the number behind the !
+    # either inside or outside of the box.
+    x = parse_float(info)
+    if x :
+        return x
+    return parse_int(info)
+    
 
 
 def scrape_all_elements() :
@@ -59,7 +76,7 @@ def scrape_all_elements() :
             symbol = info_array[1]
             name = info_array[2]
             mass_info = info_array[6]
-            mass = parse_mass_info(mass_info)
+            mass = parse_float_or_int(mass_info)
 
             # print('elem_no = ', elem_no)
             # print('symbol = ', symbol)
@@ -79,4 +96,33 @@ def write_mass_constants() :
 
 def wikiscrape(const_name) :
     return
+
+def wiki_value_from_key(name, key) :
+    '''
+    Scrape table rows in that 'name' wikipedia page for the 'key' string.
+    In that row, find a floating point value and return it.
+    '''
+    soup = wikisearch(name)
+    trs = soup.find_all('tr')
+    res_raw = False
+    for tr in trs :
+        if key in tr.text :
+            res_raw = tr.text
+            break
+    if res_raw :
+        res_val = parse_float(res_raw)
+    else :
+        res_val = 0.0
+        print('We cannot find the %s value of %s (assume = 0.0).' % (key, name))
+    return res_val
+
+def entropy(name) :
+    return wiki_value_from_key(name, 'So298')
+
+def enthalpy_formation(name) :
+    return wiki_value_from_key(name, 'ΔfHo298')
+
+def enthalpy_combustion(name) :
+    return wiki_value_from_key(name, 'ΔcHo298')
+
 
