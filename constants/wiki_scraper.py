@@ -7,6 +7,7 @@ import re
 from bs4 import BeautifulSoup
 from constants.file_writer import write_dict
 
+
 def wikisearch(query) :
     '''
     Return a beautiful soap object of the 'query' wikipedia page.
