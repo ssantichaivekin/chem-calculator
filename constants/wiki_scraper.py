@@ -40,11 +40,12 @@ def parse_float(info) :
         res = float(num)
         return res
 
+
 def parse_int(info) :
     '''
     Find the first integer in a string. But you return a float.
     Quite counter intuitive. Maybe I should change how this works.
-    # TODO: Change how this works.
+    # TODO: Change how this works?
     '''
     pattern = r'(−?[0-9]+)'
     int_regex = re.compile(pattern)
@@ -62,7 +63,9 @@ def parse_float_or_int(info) :
     if x :
         return x
     return parse_int(info)
-    
+
+def parse_num_with_units(units) :
+    return units
 
 
 def scrape_all_elements() :
@@ -112,8 +115,20 @@ def write_mass_constants() :
     order = ['symbol', 'mass', 'name', 'elem_no']
     write_dict('./constants/element_masses.csv', elements, order)
 
+conversions = {'MJ·mol−1': ('kJ·mol−1', 1000)}
 
-def wiki_value_from_key(name, key) :
+def unit_convert(value, unit) :
+    '''
+    For now, just convert MJ to kJ.
+    '''
+    if unit in conversions :
+        newunit = conversions[0]
+        newvalue = conversion[1] * val
+        return newvalue, newunit
+    return value, unit
+
+
+def wiki_value_from_key(name, key, units) :
     '''
     Scrape table rows in that 'name' wikipedia page for the 'key' string.
     In that row, find a floating point value and return it.
@@ -126,8 +141,9 @@ def wiki_value_from_key(name, key) :
             res_raw = tr.text
             break
     if res_raw :
-        # TODO: change parse_float to parse the correct column.
-        res_val = parse_float(res_raw)
+        # Parse float or int that precedes a unit.
+        res_val, unit = parse_num_with_units(res_raw, units)
+        print('According to wikipedia, the %s of %s is %.1f %s' % (key, name, res_val, unit))
     else :
         res_val = 0.0
         print('We cannot find the %s value of %s (assume = 0.0).' % (key, name))
@@ -137,18 +153,18 @@ def entropy(name) :
     '''
     Return the standard molar entropy of 'name'
     '''
-    return wiki_value_from_key(name, 'So298')
+    return wiki_value_from_key(name, 'So298', ['J·(K·mol)−1'])
 
 def enthalpy_formation(name) :
     '''
     Return the standard enthalpy of formation of 'name'
     '''
-    return wiki_value_from_key(name, 'ΔfHo298')
+    return wiki_value_from_key(name, 'ΔfHo298', ['kJ·mol−1', 'MJ·mol−1'])
 
 def enthalpy_combustion(name) :
     '''
     Return the standard enthalpy of combustion of 'name'
     '''
-    return wiki_value_from_key(name, 'ΔcHo298')
+    return wiki_value_from_key(name, 'ΔcHo298', ['kJ·mol−1', 'MJ·mol−1'])
 
 
