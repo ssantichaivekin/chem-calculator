@@ -8,16 +8,24 @@ from bs4 import BeautifulSoup
 from constants.file_writer import write_dict
 
 def wikisearch(query) :
+    '''
+    Return a beautiful soap object of the 'query' wikipedia page.
+    '''
     params = {'search': query}
     r = requests.get('https://en.wikipedia.org/w/index.php', params=params)
     return BeautifulSoup(r.text, 'lxml')
 
-def soupsite(query) :
-    r = requests.get(query)
+def soupsite(siteurl) :
+    '''
+    Return a beautiful soup object of siteurl.
+    '''
+    r = requests.get(siteurl)
     return BeautifulSoup(r.text, 'lxml')
 
 def parse_float(info) :
     '''
+    Find the first floating point value in the string. (Floating point values
+    are defined by the decimal point.)
     Becareful! The minus (-) sign in wikipedia is not the same as in keyboard!
     I don't know why this is the case. I will ask people later.
     '''
@@ -30,6 +38,11 @@ def parse_float(info) :
         return res
 
 def parse_int(info) :
+    '''
+    Find the first integer in a string. But you return a float.
+    Quite counter intuitive. Maybe I should change how this works.
+    # TODO: Change how this works.
+    '''
     pattern = r'(−?[0-9]+)'
     int_regex = re.compile(pattern)
     matchobj = int_regex.search(info)
@@ -89,13 +102,13 @@ def scrape_all_elements() :
     return elements
 
 def write_mass_constants() :
+    '''
+    Write mass constand to a file in constants folder.
+    '''
     elements = scrape_all_elements()
     order = ['symbol', 'mass', 'name', 'elem_no']
     write_dict('./constants/element_masses.csv', elements, order)
 
-
-def wikiscrape(const_name) :
-    return
 
 def wiki_value_from_key(name, key) :
     '''

@@ -1,10 +1,10 @@
 This is my to do list.
 I think my productivity is very low. I should just do one thing at a time I guess.
 
-- We can also grab thermodynamic datas from wikipedia. At this point, I should merge the two constant functions file into one (run val constants and run mass constants) and work upon the merged file.
+- REFACTOR your files. Create a new folder called scraper. Put everything scraper-related inside that folder. Create a folder called matcher. Put everything that has a regex into that file. Create a new folder called filer_controller. Move everything csv-related to that folder. Now, the constants folder should only have constants. That is the way it should be. Just thinking about it makes me feel peace.
 
 
-- Create `showwork()` method.
+- Create `showwork()` method. It should show what websites it obtain its datas from, or how it gets calculated.
 - Create lab objects like breaker. They can have properties like 'molar' and methods like pour_to().
 - How about a 'react()' method?
 - Rewrite README.md
@@ -21,3 +21,4 @@ Done
 - Create a list of constants that should be defined like plank constant, the ideal gas constant, or moles.
 - Integrate it to the terminal for it to run well. (I did it by adding alias ichem='ipython -i ~/location/chem-calculator/chem_calculator.py in my .zshrc)
 - Enable the mass command to scrape the web for mass information.
+- Grab thermodynamic datas from wikipedia.
