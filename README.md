@@ -24,7 +24,7 @@ You can do something like this after running chem_calculator.py :
 -187.8
 >>> entropy('O2')
 We cannot find the So298 value of O2 (assume = 0.0).
-0.0
+0.0 # return
 >>> enthalpy_combustion('butane')
 According to https://en.wikipedia.org/wiki/Butane, the ΔcHo298 of butane is -2.88 MJ mol−1
 This is converted to -2876.90 kJ/mol
