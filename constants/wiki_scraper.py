@@ -117,12 +117,21 @@ def wiki_value_from_key(name, key) :
     return res_val
 
 def entropy(name) :
+    '''
+    Return the standard molar entropy of 'name'
+    '''
     return wiki_value_from_key(name, 'So298')
 
 def enthalpy_formation(name) :
+    '''
+    Return the standard enthalpy of formation of 'name'
+    '''
     return wiki_value_from_key(name, 'ΔfHo298')
 
 def enthalpy_combustion(name) :
+    '''
+    Return the standard enthalpy of combustion of 'name'
+    '''
     return wiki_value_from_key(name, 'ΔcHo298')
 
 
