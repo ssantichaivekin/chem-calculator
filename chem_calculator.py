@@ -8,3 +8,4 @@ from constants.run_val_constants import *
 from mass_function import mass, fmass, wikimass
 
 # import function to read and process thermodynamic values
+from constants.wiki_scraper import entropy, enthalpy_formation, enthalpy_combustion

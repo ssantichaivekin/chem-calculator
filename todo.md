@@ -1,6 +1,7 @@
 This is my to do list.
 I think my productivity is very low. I should just do one thing at a time I guess.
 
+- Make web scraper work correctly.
 - REFACTOR your files. Create a new folder called scraper. Put everything scraper-related inside that folder. Create a folder called matcher. Put everything that has a regex into that file. Create a new folder called filer_controller. Move everything csv-related to that folder. Now, the constants folder should only have constants. That is the way it should be. Just thinking about it makes me feel peace.
 
 

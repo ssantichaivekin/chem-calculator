@@ -22,6 +22,9 @@ def soupsite(siteurl) :
     r = requests.get(siteurl)
     return BeautifulSoup(r.text, 'lxml')
 
+def wikiscrape() :
+    return
+
 def parse_float(info) :
     '''
     Find the first floating point value in the string. (Floating point values
@@ -123,6 +126,7 @@ def wiki_value_from_key(name, key) :
             res_raw = tr.text
             break
     if res_raw :
+        # TODO: change parse_float to parse the correct column.
         res_val = parse_float(res_raw)
     else :
         res_val = 0.0
