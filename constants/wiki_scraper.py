@@ -122,8 +122,8 @@ def unit_convert(value, unit) :
     For now, just convert MJ to kJ.
     '''
     if unit in conversions :
-        newunit = conversions[0]
-        newvalue = conversion[1] * val
+        newunit = conversions[unit][0]
+        newvalue = conversions[unit][1] * value
         return newvalue, newunit
     return value, unit
 
@@ -143,7 +143,11 @@ def wiki_value_from_key(name, key, units) :
     if res_raw :
         # Parse float or int that precedes a unit.
         res_val, unit = parse_num_with_units(res_raw, units)
+        converted_val, converted_unit = unit_convert(res_val, unit)
         print('According to wikipedia, the %s of %s is %.1f %s' % (key, name, res_val, unit))
+        if unit != converted_unit :
+            print('This is converted to %.1f %s' % (converted_val, converted_unit))
+            return converted_val
     else :
         res_val = 0.0
         print('We cannot find the %s value of %s (assume = 0.0).' % (key, name))
