@@ -20,15 +20,30 @@ This application is designed to do calculations related to mass.
 However, it also includes thermodynamics data webscraping and other
 common chmistry constants like mol, c, h, R, etc.
 
+Calculations related to mass :
+
 ```python
+# defined constants
 >>> mass('C6H12O6')
 -180.0
 >>> mass('KAl(SO4)2·12H2O')
 474.2
->>> h # plank constant
--6.626e-34
 >>> Cl # mass of Cl
 35.5
+```
+
+Some constants :
+
+```python
+>>> h # plank constant
+-6.626e-34
+>>> c
+299792458 # speed of light
+```
+
+Thermodynamics :
+
+```python
 >>> entropy('methane')
 186.25
 >>> entropy('CH4')
@@ -50,6 +65,9 @@ This is converted to -2876.90 kJ/mol
 According to https://en.wikipedia.org/wiki/Glucose, the ΔfHo298 of glucose is -1271.00 kJ/mol
 -1271.0 # return
 ```
+
+Note that these methods return numbers so you can add, subtract, multiply or do anything
+to it as normal.
 
 ## What is going on behind the scene?
 
@@ -74,6 +92,7 @@ According to https://en.wikipedia.org/wiki/CH4, the So298 of CH4 is 186.25 J·(K
 
 The webscraping part still needs a lot of improvement. It still fails to grab thermodynamic
 datas of many common objects (most notably glucose). The formula parsing part works perfectly well.
+I don't think I will improve this in the near future.
 
 <img src="https://github.com/ssantichaivekin/chem-calculator/blob/master/screenshot.png" width="600">
 
