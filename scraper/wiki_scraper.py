@@ -5,7 +5,7 @@ This file defines a wikipedia .
 import requests
 import re
 from bs4 import BeautifulSoup
-from constants.file_writer import write_dict
+from read-write.file_writer import write_dict
 
 
 def wikisearch(query) :
@@ -94,9 +94,6 @@ def parse_num_with_units(info, units) :
         if matchobj :
             numstr = matchobj.group(1)
             return parse_float_or_int(numstr), unit
-
-
-
 
 
 def scrape_all_elements() :

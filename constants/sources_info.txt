@@ -1,2 +1,0 @@
-masses scraped via wikipedia.
-constants written by hand.

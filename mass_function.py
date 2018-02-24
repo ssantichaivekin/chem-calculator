@@ -6,8 +6,8 @@ components. (This is sometimes useful where very small mass-energy
 relations starts to matter.)
 '''
 
-from constants.file_readers import read_mass_from_file
-from constants.wiki_scraper import wikiscrape, wiki_mass
+from read-write.file_readers import read_mass_from_file
+from read-write.wiki_scraper import wikiscrape, wiki_mass
 from matcher.formula_matcher import isChemicalFormula, formulaParse
 
 masses = read_mass_from_file()

@@ -1,5 +1,5 @@
 import csv
-from constants.wiki_scraper import write_mass_constants
+from read-write.wiki_scraper import write_mass_constants
 
 def read_dict_from_file(filepath) :
     '''
