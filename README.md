@@ -75,6 +75,6 @@ According to https://en.wikipedia.org/wiki/CH4, the So298 of CH4 is 186.25 J·(K
 The webscraping part still needs a lot of improvement. It still fails to grab thermodynamic
 datas of many common objects (most notably glucose). The formula parsing part works perfectly well.
 
-![Picture of ipython calculator](https://github.com/ssantichaivekin/chem-calculator/blob/master/screenshot.png)
+![Picture of ipython calculator](https://github.com/ssantichaivekin/chem-calculator/blob/master/screenshot.png | width=200)
 
 
