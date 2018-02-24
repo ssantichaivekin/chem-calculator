@@ -203,4 +203,10 @@ def enthalpy_combustion(name) :
     '''
     return wiki_value_from_key(name, 'ΔcHo298', ['kJ/mol', 'kJ mol−1', 'MJ/mol', 'MJ mol−1'])
 
+def wiki_mass(name) :
+    '''
+    Return the mass of 'name'
+    '''
+    return wiki_value_from_key(name, 'Molar mass', ['g·mol−1'])
+
 

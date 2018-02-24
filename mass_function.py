@@ -8,7 +8,7 @@ relations starts to matter.)
 
 from constants.file_readers import read_mass_from_file
 from constants.wiki_scraper import wikiscrape, wiki_mass
-from formula_matcher import isChemicalFormula, formulaParse
+from matcher.formula_matcher import isChemicalFormula, formulaParse
 
 masses = read_mass_from_file()
 
@@ -63,13 +63,6 @@ def fmass(formula) :
     return total_mass
 
 
-def wikimass(name) :
-    '''
-    Scrape Wikipedia!
-    '''
-    return "We haven't implemented web scraping yet."
-
-
 def mass(name) :
     '''
     Return the mass of the chemical formula or chemical name.
@@ -79,7 +72,7 @@ def mass(name) :
     if isChemicalFormula(name) :
         return fmass(name)
     else :
-        return wikimass(name)
+        return wiki_mass(name)
     
 
 def m(name) :

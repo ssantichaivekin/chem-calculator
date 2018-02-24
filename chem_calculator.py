@@ -5,7 +5,7 @@ from constants.run_mass_constants import *
 from constants.run_val_constants import * 
 
 # import function to read mass
-from mass_function import mass, fmass, wikimass
+from mass_function import mass, fmass
 
 # import function to read and process thermodynamic values
-from constants.wiki_scraper import entropy, enthalpy_formation, enthalpy_combustion
+from constants.wiki_scraper import entropy, enthalpy_formation, enthalpy_combustion, wiki_mass
