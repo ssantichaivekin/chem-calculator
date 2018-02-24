@@ -5,7 +5,7 @@ This file defines a wikipedia .
 import requests
 import re
 from bs4 import BeautifulSoup
-from read-write.file_writer import write_dict
+from read_write.file_writer import write_dict
 
 
 def wikisearch(query) :

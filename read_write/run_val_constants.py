@@ -7,7 +7,7 @@ You will have to call this with a %run -i and call run_mass_constants()
 in order for it to initialize all the global variables.
 '''
 
-from read-write.file_readers import read_constants_from_file
+from read_write.file_readers import read_constants_from_file
 
 
 def run_val_constants() :
