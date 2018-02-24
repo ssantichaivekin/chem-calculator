@@ -1,3 +1,10 @@
+# move to the directory where this application is installed
+import os
+loc = os.path.abspath(__file__)
+# just strip everything but leave /
+os.chdir(loc.strip('chem_calculator.py'))
+
+
 # import defined mass constants H = 1, C = 12 Cl = 35.5
 from read_write.run_mass_constants import *
 
@@ -10,3 +17,4 @@ from mass_function import mass, fmass
 # import function to read and process thermodynamic values
 from scraper.wiki_scraper import entropy, enthalpy_formation, enthalpy_combustion
 from scraper.wiki_scraper import wiki_mass as wikimass
+
