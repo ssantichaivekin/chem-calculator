@@ -7,7 +7,7 @@ relations starts to matter.)
 '''
 
 from constants.file_readers import read_mass_from_file
-from constants.wiki_scraper import wikiscrape
+from constants.wiki_scraper import wikiscrape, wiki_mass
 from formula_matcher import isChemicalFormula, formulaParse
 
 masses = read_mass_from_file()
@@ -79,7 +79,7 @@ def mass(name) :
     if isChemicalFormula(name) :
         return fmass(name)
     else :
-        return wiki_mass(name)
+        return wikimass(name)
     
 
 def m(name) :
