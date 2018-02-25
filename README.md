@@ -23,7 +23,6 @@ common chmistry constants like mol, c, h, R, etc.
 Calculations related to mass :
 
 ```python
-# defined constants
 >>> mass('C6H12O6')
 -180.0
 >>> mass('KAl(SO4)2·12H2O')
@@ -55,15 +54,15 @@ Thermodynamics :
 >>> enthalpy_formation('H2O2')
 -187.8
 >>> entropy('O2')
-We cannot find the So298 value of O2 (assume = 0.0).
-0.0 # return
+# OUT: We cannot find the So298 value of O2 (assume = 0.0).
+0.0
 >>> enthalpy_combustion('butane')
-According to https://en.wikipedia.org/wiki/Butane, the ΔcHo298 of butane is -2.88 MJ mol−1
-This is converted to -2876.90 kJ/mol
--2876.90 # return
+# OUT: According to https://en.wikipedia.org/wiki/Butane, the ΔcHo298 of butane is -2.88 MJ mol−1
+# OUT: This is converted to -2876.90 kJ/mol
+-2876.90
 >>> enthalpy_formation('glucose')
-According to https://en.wikipedia.org/wiki/Glucose, the ΔfHo298 of glucose is -1271.00 kJ/mol
--1271.0 # return
+# OUT: According to https://en.wikipedia.org/wiki/Glucose, the ΔfHo298 of glucose is -1271.00 kJ/mol
+-1271.0
 ```
 
 Note that these methods return numbers so you can add, subtract, multiply or do anything
@@ -84,8 +83,8 @@ False
 # The keyword for entropy is So298
 # The unit we are expecting is 'J·(K·mol)−1'
 >>> wiki_value_from_key('CH4', 'So298', ['J·(K·mol)−1'])
-According to https://en.wikipedia.org/wiki/CH4, the So298 of CH4 is 186.25 J·(K·mol)−1
-186.25 # return
+# OUT: According to https://en.wikipedia.org/wiki/CH4, the So298 of CH4 is 186.25 J·(K·mol)−1
+186.25
 ```
 
 ## Does it work well?
