@@ -12,7 +12,8 @@ from read_write.run_mass_constants import *
 from read_write.run_val_constants import * 
 
 # import function to read mass
-from mass_function import mass, fmass, count_elements
+from mass_function import mass, fmass
+from mass_function import count_elements_and_check as count_elements
 
 # import function to read and process thermodynamic values
 from scraper.wiki_scraper import entropy, enthalpy_formation, enthalpy_combustion

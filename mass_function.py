@@ -59,8 +59,16 @@ def fmass(formula) :
     total_mass = 0
     for element in elements :
         count = elements[element]
-        total_mass += masses[element] * count
+        try :
+            total_mass += masses[element] * count
+        except KeyError as error_obj :
+             print('Cannot find element', error_obj)
+             return
     return total_mass
+
+def count_elements_and_check(formula) :
+    if fmass(formula) :
+        return count_elements(formula)
 
 
 def mass(name) :
