@@ -93,6 +93,10 @@ The webscraping part still needs a lot of improvement. It still fails to grab th
 datas of many common objects (most notably glucose). The formula parsing part works perfectly well.
 I don't think I will improve this in the near future.
 
-<img src="https://github.com/ssantichaivekin/chem-calculator/blob/master/screenshot.png" width="600">
+<img src="https://github.com/ssantichaivekin/chem-calculator/blob/master/screenshots/screenshot.png" width="600">
+
+<img src="https://github.com/ssantichaivekin/chem-calculator/blob/master/screenshots/screenshot2.png" width="500">
+
+<img src="https://github.com/ssantichaivekin/chem-calculator/blob/master/screenshots/screenshot3.png" width="300">
 
 
