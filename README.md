@@ -73,9 +73,9 @@ to it as normal.
 Some regex parsing and Beautiful Soap webscraping.
 
 ```python
->>> from matcher.formula_matcher import *
 >>> count_elements('Na2B4O7.10H2O')
 {'B': 4, 'H': 20, 'Na': 2, 'O': 17}
+>>> from matcher.formula_matcher import isChemicalFormula
 >>> isChemicalFormula('John Cena')
 False
 
