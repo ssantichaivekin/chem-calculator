@@ -89,8 +89,7 @@ False
 
 ## Does it work well?
 
-The webscraping part still needs a lot of improvement. It still fails to grab thermodynamic
-datas of many common objects (most notably glucose). The formula parsing part works perfectly well.
+The webscraping part might need improvement due to wikipedia's inconsistency. (For example, they interchangibly use 'kJ/mol', 'kJ mol−1', and 'kJ·mol−1'). The formula parsing part works perfectly well.
 I don't think I will improve this in the near future.
 
 <img src="https://github.com/ssantichaivekin/chem-calculator/blob/master/screenshots/screenshot.png" width="600">

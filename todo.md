@@ -1,14 +1,13 @@
 This is my to do list.
 I think my productivity is very low. I should just do one thing at a time I guess.
 
-- Create a new README.md with screenshots of how to use it in chem lab.
+- build via binder.
 - Create `showwork()/hidework()` method. It should show what websites it obtain its datas from, or how it gets calculated.
 
 This will most probably not get done. I don't think I will revisit this soon :
 
 - Create lab objects like breaker. They can have properties like 'molar' and methods like pour_to().
 - How about a 'react()' method?
-- Rewrite README.md
 - Maybe elements, compounds, etc deserves its own class.
 
 Done
@@ -23,3 +22,4 @@ Done
 - Integrate it to the terminal for it to run well. (I did it by adding alias ichem='ipython -i ~/location/chem-calculator/chem_calculator.py in my .zshrc)
 - Enable the mass command to scrape the web for mass information.
 - Grab thermodynamic datas from wikipedia.
+- - Create a new README.md with screenshots of how to use it in chem lab.
