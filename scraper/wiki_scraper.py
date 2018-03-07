@@ -7,7 +7,9 @@ import re
 from bs4 import BeautifulSoup
 from read_write.file_writer import write_dict
 from matcher.num_matcher import parse_float_or_int, parse_num_with_units
-from scraper.conversions import conversion_table as conversions
+
+from scraper.keys import conversion_table as conversions
+from scraper.keys import entropy_units, enthalpy_units, mass_units
 
 def wikisearch(query) :
     '''
@@ -111,24 +113,24 @@ def entropy(name) :
     '''
     Return the standard molar entropy of 'name'
     '''
-    return wiki_value_from_key(name, 'So298', ['J·(K·mol)−1'])
+    return wiki_value_from_key(name, 'So298', entropy_units)
 
 def enthalpy_formation(name) :
     '''
     Return the standard enthalpy of formation of 'name'
     '''
-    return wiki_value_from_key(name, 'ΔfHo298', ['kJ/mol', 'kJ mol−1', 'MJ/mol', 'MJ mol−1'])
+    return wiki_value_from_key(name, 'ΔfHo298', enthalpy_units)
 
 def enthalpy_combustion(name) :
     '''
     Return the standard enthalpy of combustion of 'name'
     '''
-    return wiki_value_from_key(name, 'ΔcHo298', ['kJ/mol', 'kJ mol−1', 'MJ/mol', 'MJ mol−1'])
+    return wiki_value_from_key(name, 'ΔcHo298', enthalpy_units)
 
 def wiki_mass(name) :
     '''
     Return the mass of 'name'
     '''
-    return wiki_value_from_key(name, 'Molar mass', ['g·mol−1'])
+    return wiki_value_from_key(name, 'Molar mass', mass_units)
 
 
