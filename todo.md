@@ -6,7 +6,9 @@ I think my productivity is very low. I should just do one thing at a time I gues
 
 This will most probably not get done. I don't think I will revisit this soon :
 
+- Perform chemical equation balancing and redox calculations.
 - Create lab objects like breaker. They can have properties like 'molar' and methods like pour_to().
+- Perform units calculations.
 - How about a 'react()' method?
 - Maybe elements, compounds, etc deserves its own class.
 
