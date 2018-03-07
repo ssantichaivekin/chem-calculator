@@ -7,6 +7,7 @@ import re
 from bs4 import BeautifulSoup
 from read_write.file_writer import write_dict
 from matcher.num_matcher import parse_float_or_int, parse_num_with_units
+from scraper.conversions import conversion_table as conversions
 
 def wikisearch(query) :
     '''
@@ -69,9 +70,6 @@ def write_mass_constants() :
     elements = scrape_all_elements()
     order = ['symbol', 'mass', 'name', 'elem_no']
     write_dict('./constants/element_masses.csv', elements, order)
-
-conversions = {'MJ/mol': ('kJ/mol', 1000),
-               'MJ mol−1' : ('kJ/mol', 1000)}
 
 def unit_convert(value, unit) :
     '''
