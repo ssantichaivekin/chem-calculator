@@ -12,7 +12,7 @@ The matchers generally return the following: {
 import re
 
 # element name, (oxidation number), element count
-element_pattern = r'([A-Z][a-z]?)(?:\(I+\))?([0-9]*)'
+element_pattern = r'([A-Z][a-z]?)(?:\(V?I+V?\))?([0-9]*)'
 element_des = ['element name', 'element count']
 element_types = [str, int]
 element_regex = re.compile(element_pattern)

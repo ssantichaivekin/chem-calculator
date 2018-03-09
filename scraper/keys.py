@@ -4,8 +4,8 @@ mass_units = ['g·mol−1']
 
 
 conversion_table = {'kJ/mol'    : ('kJ/mol', 1),
-                    'kJ mol−1'  : ('kJ/mol', 1),
-                    'kJ·mol−1'  : ('kJ/mol', 1),
+                    # 'kJ mol−1'  : ('kJ/mol', 1),
+                    # 'kJ·mol−1'  : ('kJ/mol', 1),
                     'MJ/mol'    : ('kJ/mol', 1000),
                     'MJ mol−1'  : ('kJ/mol', 1000)}
 
