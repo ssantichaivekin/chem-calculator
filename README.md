@@ -89,8 +89,8 @@ False
 
 ## Does it work well?
 
-The webscraping part might need improvement due to wikipedia's inconsistency. (For example, they interchangibly use 'kJ/mol', 'kJ mol−1', and 'kJ·mol−1'). The formula parsing part works perfectly well.
-I don't think I will improve this in the near future.
+The webscraping part might need improvement due to wikipedia's inconsistency. (For example, wikipedia uses 'kJ/mol', 'kJ mol−1', and 'kJ·mol−1' interchangibly). The formula parsing part works perfectly well.
+I don't think I will touch this repo in the near future.
 
 <img src="https://github.com/ssantichaivekin/chem-calculator/blob/master/screenshots/screenshot.png" width="600">
 
