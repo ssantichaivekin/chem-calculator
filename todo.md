@@ -1,6 +1,3 @@
-This is my to do list.
-I think my productivity is very low. I should just do one thing at a time I guess.
-
 - build via binder.
 - Create `showwork()/hidework()` method. It should show what websites it obtain its datas from, or how it gets calculated.
 
