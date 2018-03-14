@@ -21,4 +21,4 @@ Done
 - Integrate it to the terminal for it to run well. (I did it by adding alias ichem='ipython -i ~/location/chem-calculator/chem_calculator.py in my .zshrc)
 - Enable the mass command to scrape the web for mass information.
 - Grab thermodynamic datas from wikipedia.
-- - Create a new README.md with screenshots of how to use it in chem lab.
+- Create a new README.md with screenshots of how to use it in chem lab.
