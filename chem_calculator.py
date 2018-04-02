@@ -19,3 +19,7 @@ from mass_function import count_elements_and_check as count_elements
 from scraper.wiki_scraper import entropy, enthalpy_formation, enthalpy_combustion
 from scraper.wiki_scraper import wiki_mass as wikimass
 
+# import numpy and matplotlib
+import numpy as np
+import matplotlib.pyplot as plt
+
