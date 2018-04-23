@@ -36,7 +36,7 @@ quantifier_types = [int, str]
 quantifier_regex = re.compile(quantifier_pattern)
 
 # full pattern regex checker
-full_pattern = '^(:?(?:%s)|(?:%s)|(?:%s)|(?:%s))+$' % (
+full_pattern = '^(?:%s|%s|%s|%s)+$' % (
     quantifier_pattern, 
     element_pattern, 
     paren_group_pattern,
@@ -71,7 +71,7 @@ def isChemicalFormula(string) :
     '''
     Check whether a string is a chemical formula
     '''
-    return bool(formula_regex.match(string))
+    return formula_regex.match(string)
 
 def formulaParse(string) :
     '''
