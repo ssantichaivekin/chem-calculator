@@ -1,4 +1,4 @@
-Python helper functions for simple chemistry calculations. I have a bit of wikipedia webscraping, a bit of chemical-formula-parsing regex, and a bit of hand-copied chemical constants to help you through your chemistry classes. I hope this can alleviate the pain you have in your chemistry class/lab. At least a bit.
+This is a library for simple chemistry calculations. There is a bit of wikipedia webscraping, a bit of chemical-formula-parsing regex, and a bit of pre-defined chemical constants to help people with their chemistry classes.
 
 ## How to run? 
 
@@ -17,7 +17,7 @@ alias pychem='ipython -i ~/Desktop/Code/chem-calculator/chem_calculator.py'
 ## What can you do with it?
 
 This application is designed to do calculations related to mass.
-However, it also includes thermodynamics data webscraping and other
+However, it also includes thermodynamics data webscraping and will automatically define other
 common chmistry constants like mol, c, h, R, etc.
 
 Calculations related to mass :
@@ -31,7 +31,7 @@ Calculations related to mass :
 35.5
 ```
 
-Some constants :
+Constants :
 
 ```python
 >>> h # plank constant
@@ -65,12 +65,11 @@ Thermodynamics :
 -1271.0
 ```
 
-Note that these methods return numbers so you can add, subtract, multiply or do anything
-to it as normal.
+Note that these methods return numbers so you can add, subtract, multiply or perform any operations on it as normal.
 
 ## What is going on behind the scene?
 
-Some regex parsing and Beautiful Soap webscraping.
+Some regex parsing and BeautifulSoap webscraping.
 
 ```python
 >>> count_elements('Na2B4O7.10H2O')
@@ -89,8 +88,7 @@ False
 
 ## Does it work well?
 
-The webscraping part might need improvement due to wikipedia's inconsistency. (For example, wikipedia uses 'kJ/mol', 'kJ mol−1', and 'kJ·mol−1' interchangibly). The formula parsing part works perfectly well.
-I don't think I will touch this repo in the near future.
+The webscraping part might need improvement due to wikipedia's inconsistency in using units. (For example, wikipedia uses 'kJ/mol', 'kJ mol−1', and 'kJ·mol−1' interchangibly). The formula parsing part works well.
 
 <img src="https://github.com/ssantichaivekin/chem-calculator/blob/master/screenshots/screenshot.png" width="600">
 
