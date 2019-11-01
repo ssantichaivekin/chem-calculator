@@ -24,11 +24,11 @@ Calculations related to mass :
 
 ```python
 >>> mass('C6H12O6')
--180.0
+180.156
 >>> mass('KAl(SO4)2·12H2O')
-474.2
+474.3718385
 >>> Cl # mass of Cl
-35.5
+35.45
 ```
 
 Constants :
